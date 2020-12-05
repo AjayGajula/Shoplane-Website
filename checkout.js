@@ -10,7 +10,8 @@ function onLoadcartNumber() {
 onLoadcartNumber();
 
 var myLocalStorage = JSON.parse(localStorage.getItem("productIncart"));
-console.log(myLocalStorage);
+var totalAmount = parseInt(localStorage.getItem('totalAmount'));
+
 
 var costStorage = JSON.parse(localStorage.getItem("totalAmount"));
 var countValue = JSON.parse(localStorage.getItem('cartNumbers') || 0);
@@ -55,6 +56,7 @@ placeOrder.addEventListener('click', function(){
     countValue = window.localStorage.removeItem('cartNumbers');
     
     $("#number-of-item").text('0');
-    $("#total-amount").text('0');
+    totalAmount = window.localStorage.removeItem('totalAmount');
+
 })
 })
