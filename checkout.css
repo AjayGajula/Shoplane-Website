@@ -1,0 +1,121 @@
+#product-cart {
+  margin: 9% 6%;
+}
+
+#product-cart h1 {
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.cart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cart-container .left-side {
+  width: 52%;
+  margin-top: 60px;
+}
+
+.cart-container .left-side p {
+  color: #1b1919;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.cart-container .left-side .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  margin-top: 25px;
+  border-radius: 4px;
+  padding: 15px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cart-container .left-side .item img {
+  width: 80px;
+  height: 100px;
+  border-radius: 4px;
+}
+
+.cart-container .left-side .item .details {
+  padding-left: 15px;
+}
+
+.cart-container .left-side .item .details h3 {
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  font-weight: 500;
+}
+
+.cart-container .left-side .item .details p {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #1b1919;
+  letter-spacing: 1px;
+}
+
+.cart-container .right-side {
+  width: 45%;
+  margin-top: 60px;
+}
+
+.cart-container .right-side .total-amount {
+  width: 450px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 4px;
+  padding: 15px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cart-container .right-side .total-amount h2 {
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.cart-container .right-side .total-amount p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.cart-container .right-side .total-amount p span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cart-container .right-side .total-amount button {
+  font-size: 16px;
+  margin-top: 50px;
+  font-weight: 300;
+  color: #fff;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  background-color: #009688;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=checkout.css.map */
