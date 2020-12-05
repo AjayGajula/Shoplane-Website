@@ -51,5 +51,10 @@ var placeOrder = document.getElementById('place-order');
 placeOrder.addEventListener('click', function(){
   $.post('https://5fc38a07e5c28f0016f54b09.mockapi.io/ajay/shoplaneItems', myLocalStorage, function(){
     window.location.assign('./orderconfirm.html');
+    myLocalStorage = window.localStorage.removeItem('productIncart');
+    countValue = window.localStorage.removeItem('cartNumbers');
+    
+    $("#number-of-item").text('0');
+    $("#total-amount").text('0');
 })
 })
