@@ -122,6 +122,18 @@
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+#Elogo{
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  z-index: 105;
+  width: 80px;
+  cursor: pointer;
+  img{
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .cart-container .left-side .item {
     width: 450px;
@@ -131,6 +143,7 @@
     width: 350px;
   }
 }
+
 
 @media screen and (max-width: 910px) {
   #product-cart {
