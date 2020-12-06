@@ -9,22 +9,29 @@ function onLoadcartNumber() {
 
 onLoadcartNumber();
 
-var myLocalStorage = JSON.parse(localStorage.getItem("productIncart"));
-var totalAmount = parseInt(localStorage.getItem('totalAmount'));
+function navSlide() {
+  var burger = document.querySelector(".burger");
+  var nav = document.querySelector(".menu-items");
 
+  burger.addEventListener("click", function () {
+    nav.classList.toggle("nav-active");
+    burger.classList.toggle("toggle");
+  });
+}
+navSlide();
+
+var myLocalStorage = JSON.parse(localStorage.getItem("productIncart"));
+var totalAmount = parseInt(localStorage.getItem("totalAmount"));
 
 var costStorage = JSON.parse(localStorage.getItem("totalAmount"));
-var countValue = JSON.parse(localStorage.getItem('cartNumbers') || 0);
-
+var countValue = JSON.parse(localStorage.getItem("cartNumbers") || 0);
 
 $("#number-of-item").text(countValue);
 $("#total-amount").text(costStorage);
 
-
 function productContainer(productDetails) {
-  $('.cart-items')
-    .append(
-      $("<div>")
+  $(".cart-items").append(
+    $("<div>")
       .attr("class", "item")
       .append(
         $("<img>").attr({
@@ -32,31 +39,33 @@ function productContainer(productDetails) {
           alt: "product-image",
         }),
         $("<div>")
-        .attr("class", "details")
-        .append(
-          $("<h3>").text(productDetails.title),
-          $("<p>").text("x" + productDetails.count),
-          $("<p>").text("Amount: " + productDetails.price)
-        )
+          .attr("class", "details")
+          .append(
+            $("<h3>").text(productDetails.title),
+            $("<p>").text("x" + productDetails.count),
+            $("<p>").text("Amount: " + productDetails.price)
+          )
       )
-    )
+  );
 }
 
 for (var i = 0; i < myLocalStorage.length; i++) {
   productContainer(myLocalStorage[i], costStorage);
 }
 
+var placeOrder = document.getElementById("place-order");
 
-var placeOrder = document.getElementById('place-order');
+placeOrder.addEventListener("click", function () {
+  $.post(
+    "https://5fc38a07e5c28f0016f54b09.mockapi.io/ajay/shoplaneItems",
+    myLocalStorage,
+    function () {
+      window.location.assign("./orderconfirm.html");
+      myLocalStorage = window.localStorage.removeItem("productIncart");
+      countValue = window.localStorage.removeItem("cartNumbers");
 
-placeOrder.addEventListener('click', function(){
-  $.post('https://5fc38a07e5c28f0016f54b09.mockapi.io/ajay/shoplaneItems', myLocalStorage, function(){
-    window.location.assign('./orderconfirm.html');
-    myLocalStorage = window.localStorage.removeItem('productIncart');
-    countValue = window.localStorage.removeItem('cartNumbers');
-    
-    $("#number-of-item").text('0');
-    totalAmount = window.localStorage.removeItem('totalAmount');
-
-})
-})
+      $("#number-of-item").text("0");
+      totalAmount = window.localStorage.removeItem("totalAmount");
+    }
+  );
+});
