@@ -15,3 +15,15 @@
 .order-confirm p {
   margin-top: 10px;
 }
+
+#Elogo{
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  z-index: 105;
+  width: 80px;
+  cursor: pointer;
+  img{
+    width: 100%;
+  }
+}
