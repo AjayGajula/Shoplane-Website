@@ -141,5 +141,5 @@ placeOrder.addEventListener("click", function () {
       totalAmount = window.localStorage.removeItem("totalAmount");
     }
   ).fail(function() {
-            window.location.href = "./orderconfirm.html";
+            window.location.assign("./orderconfirm.html");
 });
