@@ -130,7 +130,7 @@ var placeOrder = document.getElementById("place-order");
 
 placeOrder.addEventListener("click", function () {
   $.post(
-    "https://5fc38a07e5c28f0016f54b09.mockapi.io/ajay/shoplaneItems",
+    "https://5fc38a07e5c28f0016f54b09.mockapi.io/ajay/shoplaneorders",
     myLocalStorage,
     function () {
       window.location.assign("./orderconfirm.html");
