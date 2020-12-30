@@ -141,5 +141,10 @@ placeOrder.addEventListener("click", function () {
       totalAmount = window.localStorage.removeItem("totalAmount");
     }
   ).fail(function() {
-            window.location.assign("./orderconfirm.html");
+          window.location.assign("./orderconfirm.html");
+      myLocalStorage = window.localStorage.removeItem("productIncart");
+      countValue = window.localStorage.removeItem("cartNumbers");
+
+      $("#number-of-item").text("0");
+      totalAmount = window.localStorage.removeItem("totalAmount");
 });
